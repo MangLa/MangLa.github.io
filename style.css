@@ -1,0 +1,31 @@
+#app{
+    background-color: #343a40;
+    color:#ffffff;
+    height: 100%;
+    text-decoration: none;
+}
+.navtd{
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 5vw;
+    padding-left:10vw;
+    white-space:nowrap;
+}
+.tdf{
+    padding-left:20vw;
+}
+.mainbox{
+    background-color: #eeeeee;
+    color:black;
+    font-size:3vw;
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+}
+.footer{
+    position: absolute;
+    background-color: black;
+    bottom: 0px;
+    width: 100%;
+}
+.mainvideo{
+    width:80%;
+}

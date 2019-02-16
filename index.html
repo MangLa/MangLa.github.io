@@ -1,13 +1,89 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 
 <head>
-    <script src=“https://unpkg.com/vue@2.3.2”> </script>
-        <script> new Vue({ el: ‘#vue- app’, data: function () { return { message: ‘안녕하세요.뷰(Vue)입니다.’ } } }) 
-        </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="aos.css">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Nanum+Gothic|Nanum+Gothic+Coding"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="finger.ico">
+    <script src="vue.js"></script>
+    <script src="aos.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
+    <div id="app">
+        <table>
+            <tr data-aos="fade-down">
+                <td class="navtd tdf">
+                    <router-link to="/">대문</router-link>
+                </td>
+                <td class="navtd">
+                    <router-link to="/crud">게시판</router-link>
+                </td>
+                <td class="navtd"></td>
+                <td class="navtd"></td>
+            </tr>
+        </table>
+        <router-view></router-view>
+        <div class="container">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">작성자</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="작성자">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">비밀번호</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="비밀번호">
+                </div>
+            </div>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="내용"></textarea>
+        </div>
+        <div class="footer">asdf</div>
+    </div>
+    <script>
+
+        const Foo = { template: '<div data-aos="zoom-out" data-aos-easing="easeOutQuint" data-aos-duration="1100" class="mainbox container" >맹정열 -2019.06.17~2021.01.11 R.I.P<video autoplay loop src="soldier.mp4" class="mainvideo"/></div>' }
+        const Bar = { template: '<div>bar</div>' }
+        const routes = [
+            { path: '/', component: Foo },
+            { path: '/crud', component: Bar }
+        ]
+        const router = new VueRouter({
+            routes
+        })
+        const app = new Vue({
+            router
+        }).$mount('#app')
+        AOS.init();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBSGiDjMjF_MOXi-DYvlzYR-fQnXgPD39s",
+            authDomain: "mangla-githubpage.firebaseapp.com",
+            databaseURL: "https://mangla-githubpage.firebaseio.com",
+            projectId: "mangla-githubpage",
+            storageBucket: "mangla-githubpage.appspot.com",
+            messagingSenderId: "443601946991"
+        };
+        firebase.initializeApp(config);
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+
+        var postData = {
+            brdno: newPostKey,
+            brdwriter: "홍길동",
+            brdtitle: "게시판 제목",
+            brdmemo: "게시물 내용",
+            brddate: Date.now()
+        };
+
+        var updates = {};
+        updates['/board/' + newPostKey] = postData;
+
+        firebase.database().ref().update(updates);
+    </script>
 </body>
 
 </html>
