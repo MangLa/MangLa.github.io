@@ -10,6 +10,7 @@
     <script src="vue.js"></script>
     <script src="aos.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
 </head>
 
 <body>
@@ -31,19 +32,22 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">작성자</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="작성자">
+                    <input v-model="writer" type="text" class="form-control" id="writer" placeholder="작성자">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">비밀번호</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="비밀번호">
+                    <input v-model="password" type="password" class="form-control" id="password" placeholder="비밀번호">
                 </div>
             </div>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="내용"></textarea>
+            <textarea v-model="content" class="form-control" id="content" rows="4" placeholder="내용"></textarea>
+            <button v-on:click="write()" class="btn btn-primary smb">등록</button>
+            <button @click="this.list=rows">{{list}}
         </div>
-        <div class="footer">asdf</div>
+    </div>
+
+    <div class="footer">asdf</div>
     </div>
     <script>
-
         const Foo = { template: '<div data-aos="zoom-out" data-aos-easing="easeOutQuint" data-aos-duration="1100" class="mainbox container" >맹정열 -2019.06.17~2021.01.11 R.I.P<video autoplay loop src="soldier.mp4" class="mainvideo"/></div>' }
         const Bar = { template: '<div>bar</div>' }
         const routes = [
@@ -53,13 +57,7 @@
         const router = new VueRouter({
             routes
         })
-        const app = new Vue({
-            router
-        }).$mount('#app')
         AOS.init();
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
-    <script>
         var config = {
             apiKey: "AIzaSyBSGiDjMjF_MOXi-DYvlzYR-fQnXgPD39s",
             authDomain: "mangla-githubpage.firebaseapp.com",
@@ -70,19 +68,58 @@
         };
         firebase.initializeApp(config);
         var newPostKey = firebase.database().ref().child('posts').push().key;
+        var lists;
+        const app = new Vue({
+            router,
+            data: {
+                writer: '',
+                password: '',
+                content: '',
+                list:'r'
+            },
+            created: function () {
+                firebase.database().ref('board').orderByKey().once('value', function (snapshot) {
+                    var rows = [];
+                    snapshot.forEach(function (childSnapshot) {
+                        var childData = childSnapshot.val();
 
-        var postData = {
-            brdno: newPostKey,
-            brdwriter: "홍길동",
-            brdtitle: "게시판 제목",
-            brdmemo: "게시물 내용",
-            brddate: Date.now()
-        };
+                        //childData.date = dateFormat(childData.date, "yyyy-mm-dd");
+                        rows.push(childData);
+                    });
+                    app.list = rows;
+                    app.list.forEach(function(post){
+                        console.log(post.content._value);
+                    });
+                });
+            },
+            methods: {
+                write: function () {
+                    var postData = {
+                        no: newPostKey,
+                        writer: writer,
+                        password: password,
+                        content: content,
+                        date: Date.now()
+                    };
+                    var updates = {};
+                    updates['/board/' + newPostKey] = postData;
+                    firebase.database().ref().update(updates);
+                },
+                readlist: function () {
+                    firebase.database().ref('board').orderByKey().once('value', function (snapshot) {
+                        var rows = [];
+                        snapshot.forEach(function (childSnapshot) {
+                            var childData = childSnapshot.val();
 
-        var updates = {};
-        updates['/board/' + newPostKey] = postData;
+                            //childData.date = dateFormat(childData.date, "yyyy-mm-dd");
+                            rows.push(childData);
+                        });
+                        app.list = rows;
+                    });
+                }
+            }
+        }).$mount('#app')
 
-        firebase.database().ref().update(updates);
     </script>
 </body>
 

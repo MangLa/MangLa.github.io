@@ -2,13 +2,14 @@
     background-color: #343a40;
     color:#ffffff;
     height: 100%;
-    text-decoration: none;
+    
 }
 .navtd{
     font-family: 'East Sea Dokdo', cursive;
     font-size: 5vw;
     padding-left:10vw;
     white-space:nowrap;
+    text-decoration: none;
 }
 .tdf{
     padding-left:20vw;
@@ -28,4 +29,10 @@
 }
 .mainvideo{
     width:80%;
+}
+.smb{
+    margin-top: 2%;
+    float: right;
+    width: 15%;
+    height:45px;
 }
