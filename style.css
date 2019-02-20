@@ -4,12 +4,14 @@
     height: 100%;
     
 }
+.submitform{
+    margin-bottom: 10px;
+}
 .navtd{
     font-family: 'East Sea Dokdo', cursive;
     font-size: 5vw;
     padding-left:10vw;
     white-space:nowrap;
-    text-decoration: none;
 }
 .tdf{
     padding-left:20vw;
@@ -17,7 +19,7 @@
 .mainbox{
     background-color: #eeeeee;
     color:black;
-    font-size:3vw;
+    font-size:30px;
     font-family: 'Nanum Gothic', sans-serif;
     text-align: center;
 }
@@ -35,4 +37,63 @@
     float: right;
     width: 15%;
     height:45px;
+}
+.pdata{
+    background-color: #eeeeee;
+    border-radius: 5px;
+    color:#000000;
+    margin-bottom: 10px;
+    font-family: 'Nanum Gothic', cursive;
+}
+.postdate{
+    float: right;
+    font-weight: 900;
+    margin-right: 10px;
+}
+.inputpost{
+    font-family: 'Nanum Gothic', cursive;
+}
+h3{
+    display: inline;
+}
+@media(max-width:1050px){
+    .btn {
+        width:100%;
+        height: 50px;
+        font-size:2.5rem !important;
+        padding-top: 0 !important;
+        padding-bottom: 60px !important;
+        font-weight: 500 !important;
+        
+    }
+    .submitform{
+        margin-bottom: 120px !important;
+    }
+    .navtd{
+        font-family: 'East Sea Dokdo', cursive;
+        font-size: 13vw;
+        padding-left:7vw;
+        white-space:nowrap;
+        text-decoration: none;
+    }
+    .container{
+        max-width: 100% !important;
+        font-size:0px;
+    }
+    .pdata{
+        margin-bottom: 30px;
+    }
+    .postdate{
+        font-size: 50px;
+    }
+    .form-control{
+        font-size: 35px !important;
+        font-weight: 500 !important;
+    }
+    h3{
+        font-size: 70px !important;
+    }
+    h5{
+        font-size: 45px !important;
+    }
 }
