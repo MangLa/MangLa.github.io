@@ -18,16 +18,18 @@
         <table>
             <tr>
                 <td class="navtd tdf" v-on:click="crudtrue=false">
-                    <router-link to="/" >대문</router-link>
+                    <router-link to="/">대문</router-link>
                 </td>
                 <td class="navtd" v-on:click="crudtrue=true">
-                    <router-link to="/crud" >게시판</router-link>
+                    <router-link to="/crud">게시판</router-link>
                 </td>
                 <td class="navtd"></td>
                 <td class="navtd"></td>
             </tr>
         </table>
-        <router-view></router-view>
+        <div v-if="!crudtrue" 
+            class="mainbox container">맹정열
+            -2019.06.17~2021.01.11 R.I.P<video autoplay loop src="soldier.mp4" class="mainvideo" /></div>
         <div v-if="crudtrue">
             <div class="container">
                 <div class="submitform">
@@ -59,7 +61,7 @@
     <div class="footer">asdf</div>
     </div>
     <script>
-        const Foo = { template: '<div data-aos="zoom-out" data-aos-easing="easeOutQuint" data-aos-duration="1100" class="mainbox container" >맹정열 -2019.06.17~2021.01.11 R.I.P<video autoplay loop src="soldier.mp4" class="mainvideo"/></div>' }
+        const Foo = { template: '' }
         const Bar = {
             template: ``
         }
