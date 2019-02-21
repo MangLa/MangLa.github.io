@@ -29,37 +29,33 @@
         </table>
         <router-view></router-view>
         <div class="container">
-                <div class="submitform">
-                    <div class="form-row">
-                        <div class="form-group col-lg">
-                            <label class="inputpost">작성자</label>
-                            <input v-model="writer" type="text" class="form-control" id="writer" placeholder="작성자"
-                                autowired>
-                        </div>
-                        <div class="form-group col-lg">
-                            <label class="inputpost">비밀번호</label>
-                            <input v-model="password" type="password" class="form-control" id="password"
-                                placeholder="비밀번호">
-                        </div>
+            <div class="submitform">
+                <div class="form-row">
+                    <div class="form-group col-lg">
+                        <label class="inputpost">작성자</label>
+                        <input v-model="writer" type="text" class="form-control" id="writer" placeholder="작성자"
+                            autowired>
                     </div>
-                    <textarea v-model="content" class="form-control" id="content" rows="4" placeholder="내용"></textarea>
-                    <button v-on:click="write()" class="btn btn-primary smb">등록</button><br><br><br>
+                    <div class="form-group col-lg">
+                        <label class="inputpost">비밀번호</label>
+                        <input v-model="password" type="password" class="form-control" id="password" placeholder="비밀번호">
+                    </div>
                 </div>
-                <div v-for="postdata in list" class="pdata">
-                    <h3>{{postdata.writer._value}}</h3><span class="postdate">{{postdata.date}}</span><br>
-                    <h5>{{postdata.content._value}}</h5><br>
-                </div>
+                <textarea v-model="content" class="form-control" id="content" rows="4" placeholder="내용"></textarea>
+                <button v-on:click="write()" class="btn btn-primary smb">등록</button><br><br><br>
             </div>
+            
+        </div>
     </div>
 
     <div class="footer">asdf</div>
     </div>
     <script>
         const Foo = { template: '<div data-aos="zoom-out" data-aos-easing="easeOutQuint" data-aos-duration="1100" class="mainbox container" >맹정열 -2019.06.17~2021.01.11 R.I.P<video autoplay loop src="soldier.mp4" class="mainvideo"/></div>' }
-        const Bar = { template: ''}
+        const Bar = { template: '<template v-for="postdata in list"><div class="pdata"> <h3>{{postdata.writer._value}}</h3><span class="postdate">{{postdata.date}}</span><br><h5>{{postdata.content._value}}</h5><br></div></template>'}
         const routes = [
             { path: '/', component: Foo },
-            { path: '/crud', component: Bar }
+            { path: '/crud', component: Bar , props: true }
         ]
         const router = new VueRouter({
             routes
