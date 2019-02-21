@@ -44,6 +44,8 @@
     color:#000000;
     margin-bottom: 10px;
     font-family: 'Nanum Gothic', cursive;
+    width:90%;
+    margin-left: 5%;
 }
 .postdate{
     float: right;
