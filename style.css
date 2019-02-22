@@ -1,8 +1,7 @@
 #app{
     background-color: #343a40;
-    color:#ffffff;
-    height: 100%;
-    
+    color:#ffffff;  
+    min-height: 100%;
 }
 .submitform{
     margin-bottom: 10px;
@@ -24,7 +23,7 @@
     text-align: center;
 }
 .footer{
-    position: absolute;
+    position: fixed;
     background-color: black;
     bottom: 0px;
     width: 100%;

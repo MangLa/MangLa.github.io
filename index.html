@@ -27,9 +27,10 @@
                 <td class="navtd"></td>
             </tr>
         </table>
-        <div v-if="!crudtrue" 
-            class="mainbox container"><div class="gle">맹정열
-            -2019.06.17~2021.01.11 R.I.P</div><video autoplay loop src="soldier.mp4" class="mainvideo" /></div>
+        <div v-if="!crudtrue" class="mainbox container">
+            <div class="gle">맹정열
+                -2019.06.17~2021.01.11 R.I.P</div><video autoplay loop src="soldier.mp4" class="mainvideo" />
+        </div>
         <div v-if="crudtrue">
             <div class="container">
                 <div class="submitform">
@@ -49,7 +50,7 @@
                     <button v-on:click="write()" class="btn btn-primary smb">등록</button><br><br><br>
                 </div>
             </div>
-            <div v-for="postdata in list">
+            <div v-for="postdata in list" v-model="list">
                 <div class="pdata">
                     <h3>{{postdata.writer._value}}</h3><span class="postdate">{{postdata.date}}</span><br>
                     <h5>{{postdata.content._value}}</h5><br>
@@ -104,10 +105,10 @@
                     var mm = today.getMonth() + 1;
                     var yyyy = today.getFullYear();
                     if (dd < 10) {
-                        dd = '0' + dd
+                        dd = '0' + dd;
                     }
                     if (mm < 10) {
-                        mm = '0' + mm
+                        mm = '0' + mm;
                     }
                     today = yyyy + '/' + mm + '/' + dd;
                     var postData = {
@@ -120,6 +121,7 @@
                     var updates = {};
                     updates['/board/' + newPostKey] = postData;
                     firebase.database().ref().update(updates);
+                    readlist();
                 },
                 readlist: function () {
                     firebase.database().ref('board').orderByKey().once('value', function (snapshot) {
@@ -130,12 +132,14 @@
                             //childData.date = dateFormat(childData.date, "yyyy-mm-dd");
                             rows.push(childData);
                         });
-                        app.list = rows;
+                        app.list = rows.reverse();
                     });
                 }
             }
         }).$mount('#app')
-
+        setInterval(function(){
+            readlist();
+        },1000);
     </script>
 </body>
 
