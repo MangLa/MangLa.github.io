@@ -1,0 +1,36 @@
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="ROKA.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="shortcut icon" href="finger.ico">
+    <script src="vue.js"></script>
+	<script src="ROKA.js"></script> 
+  </head>
+  <body>
+	  
+	
+  <div id="app">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">ㅁㄴㅇㄹ</h1>
+        <p class="lead">ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ</p>
+         <div class="input-group mb-3">
+           <div class="input-group-prepend">
+              <button class="btn dropdown-toggle" 
+                      v-bind:class="{'btn-outline-dark':type1,'btn-outline-danger':type2,'btn-outline-primary':type3}" 
+                      type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{armytype}}</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" v-on:click="typeset('1')" href="#">육군</a>
+                <a class="dropdown-item" v-on:click="typeset('2')" href="#">해군</a>
+                <a class="dropdown-item" v-on:click="typeset('3')" href="#">공군</a>
+              </div>
+              <span class="input-group-text">{{Dday}}일</span>
+              <span class="input-group-text">{{percent}}%</span>
+           </div>
+          <input v-model="Dday" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
