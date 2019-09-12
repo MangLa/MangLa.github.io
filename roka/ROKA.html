@@ -1,19 +1,20 @@
 <html>
   <head>
-	<link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="ROKA.css">
     <link rel="shortcut icon" href="finger.ico">
-    <script src="../vue.js"></script>
-	<script src="ROKA.js"></script> 
+	<script src="../lib/js/jquery-3.4.1.min.js"></script>
+	<script src="../lib/js/popper.js"></script>
+	<script src="../lib/js/progressbar.min.js"></script>
+	<script src="../lib/js/bootstrap.min.js"></script>  
+    <script src="../lib/js/vue.js"></script>
   </head>
-  <body>
-	  
-	
+  <body>  
   <div id="app">
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">ㅁㄴㅇㄹ</h1>
-        <p class="lead">ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ</p>
+        <p class="lead">popper는 umd 폴더안의 것을 써야 부트스트랩 작동</p>
          <div class="input-group mb-3">
            <div class="input-group-prepend">
               <button class="btn dropdown-toggle" 
@@ -29,8 +30,17 @@
            </div>
           <input v-model="Dday" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
         </div>
-      </div>
-    </div>
-  </div>
+		  <div class="armybar">
+		    <div id="apbar"></div>
+			  <div id="apbar2"></div>
+			  <div id="apbar3"></div>
+			  <div id="apbar4"></div>
+		  </div>
+		</div>
+    </div><!--컨테이너 끝-->
+  </div><!--점보트론 끝-->
+	  </div>
   </body>
+  <script src="../lib/js/bootstrap.min.js"></script>
+  <script src="ROKA.js"></script>
 </html>

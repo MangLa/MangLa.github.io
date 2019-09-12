@@ -26,6 +26,75 @@ var app = new Vue({
         this.type3=true;
         this.armytype='공군'
       }
+	 this.percent+=2;
     }
   }
 })
+//진행막대기
+var bar = new ProgressBar.Line(apbar, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+  }
+});
+
+bar.animate(1.0);
+
+var bar2 = new ProgressBar.Line(apbar2, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+  }
+});
+
+bar2.animate(1.0);
+
+var bar3 = new ProgressBar.Line(apbar3, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+  }
+});
+
+bar3.animate(1.0);
+
+var bar4 = new ProgressBar.Line(apbar4, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+  }
+});
+
+bar4.animate(1.0);

@@ -1,4 +1,27 @@
 body{
   background-color: #c92a2a;
 }
+#apbar{
+	position: absolute;
+}
+#apbar2{
+	position: absolute;
+	margin-left:15vh;
+}
+#apbar3{
+	position: absolute;
+	margin-left:30vh;
+}
+#apbar4{
+	position: absolute;
+	margin-left:45vh;
+}
+.armybar{
+	display: inline;
+	position: relative;
+}
+.armybar div{
+	width:15vh;
+	height:3vh;
+}
 /*#e02d2d*/
