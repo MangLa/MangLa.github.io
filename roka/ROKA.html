@@ -1,4 +1,5 @@
 <html>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
   <head>
 	<link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="ROKA.css">
@@ -25,10 +26,10 @@
                 <a class="dropdown-item" v-on:click="typeset('2')" href="#">해군</a>
                 <a class="dropdown-item" v-on:click="typeset('3')" href="#">공군</a>
               </div>
-              <span class="input-group-text">{{Dday}}일</span>
               <span class="input-group-text">{{percent}}%</span>
            </div>
           <input v-model="Dday" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+		  
         </div>
 		  <div class="armybar">
 		    <div id="apbar"></div>
@@ -36,8 +37,9 @@
 			  <div id="apbar3"></div>
 			  <div id="apbar4"></div>
 		  </div>
-		</div>
-    </div><!--컨테이너 끝-->
+		</div><!--컨테이너 끝-->
+		
+    </div>
   </div><!--점보트론 끝-->
 	  </div>
   </body>

@@ -34,67 +34,59 @@ var app = new Vue({
 var bar = new ProgressBar.Line(apbar, {
   strokeWidth: 4,
   easing: 'easeInOut',
-  duration: 1400,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
+  duration: 1300,
+  color: '#FFFFFF',
   svgStyle: {width: '100%', height: '100%'},
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#FFFFFF'},
+  to: {color: '#eb4d4d'},
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
   }
 });
 
-bar.animate(1.0);
+
 
 var bar2 = new ProgressBar.Line(apbar2, {
   strokeWidth: 4,
   easing: 'easeInOut',
-  duration: 1400,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
+  duration: 1800,
+  color: '#FFFFFF',
   svgStyle: {width: '100%', height: '100%'},
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#FFFFFF'},
+  to: {color: '#ffa01c'},
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
   }
 });
-
-bar2.animate(1.0);
 
 var bar3 = new ProgressBar.Line(apbar3, {
   strokeWidth: 4,
   easing: 'easeInOut',
-  duration: 1400,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
+  duration: 2300,
+  color: '#FFFFFF',
   svgStyle: {width: '100%', height: '100%'},
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#FFFFFF'},
+  to: {color: '#5ded58'},
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
   }
 });
 
-bar3.animate(1.0);
+
 
 var bar4 = new ProgressBar.Line(apbar4, {
   strokeWidth: 4,
   easing: 'easeInOut',
-  duration: 1400,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
+  duration: 2800,
+  color: '#FFFFFF',
   svgStyle: {width: '100%', height: '100%'},
-  from: {color: '#FFEA82'},
-  to: {color: '#ED6A5A'},
+  from: {color: '#FFFFFF'},
+  to: {color: '#3599db'},
   step: (state, bar) => {
     bar.path.setAttribute('stroke', state.color);
   }
 });
-
 bar4.animate(1.0);
+bar3.animate(1.0);
+bar2.animate(1.0);
+bar.animate(1.0);
