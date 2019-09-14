@@ -2,31 +2,35 @@ body{
   background-color: #c92a2a;
 }
 #apbar{
-	position: absolute;
-	width:11vw;
-	z-index:4;
-}
-#apbar2{
-	position: absolute;
-	width:42vw;
-	z-index:3;
-}
-#apbar3{
-	position: absolute;
-	width:74vw;
-	z-index:2;
-}
-#apbar4{
-	position: absolute;
-	width:86.7vw;
-	z-index:1;
+	height:30px;
 }
 .armybar{
 	display: inline;
 	position: relative;
 	box-sizing: border-box;
 }
-.armybar div{
-	height:3vh;
+.sosu{
+	float:left;
+}
+.progressbar-text{
+	display:inline;
+}
+.nanum{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: 600;
+}
+@media all and (max-width:768px) {
+   .disphone{
+		display:none;
+	}
+}
+.clayer{
+	background-color: #e8e8e8;
+	height:100vh;
+	margin-left:15vw;
+	margin-right:15vw;
+	border:8px solid #ffe95c;
+	border-radius:12px;
+	padding-top:3vh;
 }
 /*#e02d2d*/
