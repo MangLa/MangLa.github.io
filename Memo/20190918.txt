@@ -1,0 +1,23 @@
+https://color.adobe.com/ko/explore?page=2
+/* Color Theme Swatches in Hex */
+@Manipulation-1-1-hex: #132605;
+@Manipulation-1-2-hex: #487307;
+@Manipulation-1-3-hex: #74A60A;
+@Manipulation-1-4-hex: #F2E3D5;
+@Manipulation-1-5-hex: #A69B92;
+
+/* Color Theme Swatches in RGBA */
+@Manipulation-1-1-rgba: rgba(19, 38, 5, 1);
+@Manipulation-1-2-rgba: rgba(72, 115, 7, 1);
+@Manipulation-1-3-rgba: rgba(116, 166, 10, 1);
+@Manipulation-1-4-rgba: rgba(242, 227, 213, 1);
+@Manipulation-1-5-rgba: rgba(166, 155, 146, 1);
+
+/* Color Theme Swatches in HSLA */
+@Manipulation-1-1-hsla: hsla(94, 76, 8, 1);
+@Manipulation-1-2-hsla: hsla(83, 88, 23, 1);
+@Manipulation-1-3-hsla: hsla(79, 88, 34, 1);
+@Manipulation-1-4-hsla: hsla(28, 52, 89, 1);
+@Manipulation-1-5-hsla: hsla(26, 10, 61, 1);
+
+https://kdydesign.github.io/2019/04/22/vue-cli3-tutorial/ cli 좋은설명
